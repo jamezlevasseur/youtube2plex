@@ -1,272 +1,108 @@
-  @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
-  @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 
+#album-button {
+  font-family: "Roboto";
+  font-size: .8em;
+  color: #888;
+  vertical-align: text-bottom;
+  cursor: pointer;
+}
 
+#album-button:hover {
+  color: #ff0000;
+}
+
+#album-button.active {
+  color: #ff0000;
+}
+
+#album-button.active:hover {
+  color: #888;
+}
+
+.additional-container input {
+  font-size: .9em;
+}
+
+.additonal-opt {
+  font-family: "Roboto";
+  font-size: .9em;
+  color: grey;
+}
+
+body {
+  background: white;
+  font-size: 18px;
+  padding-top: 3em;
+}
+
+body * {
+  font-family: "Roboto";
+  color: grey;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
   body {
-    background: white;
-    padding-top: 50px;
+    font-size: 36px;
   }
+}
 
-  body * {
-    font-family: "Roboto";
-    font-size: 18px;
-    color: grey;
-    text-align: center;
+.checkmark {
+  stroke: green;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 745.74853515625;
+  animation: dash 10s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625;
   }
-
-  input {
-    border-radius: 4px;
-    border: 1px solid grey;
-    padding: 8px !important;
-    margin-bottom: 10px;
-
-    font-family: "Roboto";
-    font-size: 18px;
-    color: grey;
-
-    text-align: left;
+  100% {
+    stroke-dashoffset: 0;
   }
+}
 
-  select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+#casette, #cd {
+  margin: 0;
+  width: 40px;
+  height: 25px;
+  display: inline-block;
+  cursor: pointer;
+}
 
-      background:
-    linear-gradient(45deg, transparent 50%, black 50%),
-    linear-gradient(135deg, black 50%, transparent 50%),
-    linear-gradient(to right, white, white);
-  background-position:
-    calc(100% - 21px) calc(1em + 2px),
-    calc(100% - 16px) calc(1em + 2px),
-    100% 0;
-  background-size:
-    5px 5px,
-    5px 5px,
-    2.5em 2.5em;
-  background-repeat: no-repeat;
+#casette {
+  background: url("assets/cas.png") top center no-repeat;
+  background-size: contain;
+}
 
-    border-radius: 4px;
-    border: 1px solid grey;
-    padding: 8px !important;
+#cd {
+  background: url("assets/cd.png") top center no-repeat;
+  background-size: contain;
+}
 
-    font-family: "Roboto";
-    font-size: 18px;
-    color: grey;
+#cd:hover {
+  background: url("assets/cdblue.png") top center no-repeat;
+  background-size: contain;
+}
 
-    text-align: left;
-  }
+#casette:hover {
+  background: url("assets/casblue.png") top center no-repeat;
+  background-size: contain;
+}
 
-  .additional-container input {
-    font-size: 16px;
-  }
-
-  .additonal-opt {
-    font-family: "Roboto";
-    font-size: 16px;
-    color: grey;
-  }
-
-  input[type=submit] {
-    border-radius: 4px;
-    border: 1px solid #2dcc18;
-
-    background: white;
-
-    font-family: "Roboto";
-    font-size: 18px;
-    color: #2dcc18;
-  }
-
-  input[type=submit]:hover {
-    background: #2dcc18;
-    color: white;
-  }
-
-  #playlist {
-    padding-top: 20px;
-  }
-
-  #casette, #cd {
-    margin: 0;
-    width: 40px;
-    height: 25px;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  #casette {
-    background: url("assets/cas.png") top center no-repeat;
-    background-size: contain;
-  }
-
-  #cd {
-    background: url("assets/cd.png") top center no-repeat;
-    background-size: contain;
-  }
-
-  #cd:hover {
-    background: url("assets/cdblue.png") top center no-repeat;
-    background-size: contain;
-  }
-
-  #casette:hover {
-    background: url("assets/casblue.png") top center no-repeat;
-    background-size: contain;
-  }
-
-  #menu-bar {
-    text-align: left;
-    padding: 5px 2%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  #menu-bar > * {
-    padding-right: 10px;
-  }
-
-  #single-additional {
- 
-    padding-top: 0px;
-  }
-
-  #reset-button {
-    font-family: "Roboto";
-    font-size: 14px;
-    color: #888;
-    vertical-align: text-bottom;
-    cursor: pointer;
-  }
-
-  #reset-button:hover {
-    color: #2dcc18;
-  }
-
-  #album-button {
-    font-family: "Roboto";
-    font-size: 14px;
-    color: #888;
-    vertical-align: text-bottom;
-    cursor: pointer;
-  }
-
-  #album-button:hover {
-    color: #ff0000;
-  }
-
-  #album-button.active {
-    color: #ff0000;
-  }
-
-  #album-button.active:hover {
-    color: #888;
-  }
-
-  .switcheroo {
-    background: url("../assets/arrows.png") top center no-repeat;
-    background-size: contain;
-
-    height: 25px;
-    width: 25px;
-
-    cursor: pointer;
-
-    float: right;
-    vertical-align: middle;
-    display: inline-block;
-
-    margin-top: 8px;
-    margin-left: 4px;
-  }
-
-  .switcheroo:hover {
-        background: url("../assets/arrowsgreen.png") top center no-repeat;
-    background-size: contain;
-  }
-
-  .title, .artist {
-    vertical-align: top;
-  }
-
-  .url {
-    margin: 0;
-  }
-
-  label {
-    margin: 0;
-  }
-
-  .yt-original {
-    display: block;
-    color: #888;
-    font-size: 16px;
-    text-align: center;
-    margin: 15px auto;
-  }
-
-  .yt-label {
-    display: block;
-    color: #888;
-    font-size: 13px;
-    margin-left: 4px;
-    text-align: center;
-  }
-  .yt-label input {
-    display: block;
-    margin: 0 auto;
-  }
-  .artist-label::before {
-    content:"artist (required)";
-    display: block;
-    color: #888;
-    font-size: 13px;
-    text-align: left;
-    margin-left: 4px;
-  }
-  .title-label::before {
-    content:"title (required)";
-    display: block;
-    color: #888;
-    font-size: 13px;
-    text-align: left;
-    margin-left: 4px;
-  }
-  .genre-label::before {
-    content:"genre";
-    display: block;
-    color: #888;
-    font-size: 13px;
-    text-align: left;
-    margin-left: 4px;
-  }
-  .track-label::before {
-    content:"track #";
-    display: block;
-    color: #888;
-    font-size: 13px;
-    text-align: left;
-    margin-left: 4px;
-  }
-  .album-label::before {
-    content:"album";
-    display: block;
-    color: #888;
-    font-size: 13px;
-    text-align: left;
-    margin-left: 4px;
-  }
-
-  #fin::before {
-    content: "";
-    position: fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    background: white;
-    opacity: .7;
-  }
+#fin::before {
+  content: "";
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: white;
+  opacity: .7;
+}
 
 #fin{
   display:inline-block;
@@ -302,6 +138,209 @@
   transform: rotate(45deg);
 }
 
+input {
+  border-radius: 4px;
+  border: 1px solid grey;
+  padding: 8px !important;
+  margin-bottom: 10px;
+
+  font-family: "Roboto";
+  font-size: 1em;
+  color: grey;
+
+  text-align: left;
+}
+
+input[type=submit] {
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #2dcc18;
+
+  background: white;
+
+  font-family: "Roboto";
+  font-size: 1em;
+  color: #2dcc18;
+}
+
+input[type=submit]:hover {
+  background: #2dcc18;
+  color: white;
+}
+
+/* LABELS */
+
+label {
+  margin: 0;
+}
+
+.title, .artist {
+  vertical-align: top;
+}
+
+.yt-original {
+  display: block;
+  color: #888;
+  font-size: .9em;
+  text-align: center;
+  margin: 15px auto;
+}
+
+.yt-label {
+  display: block;
+  color: #888;
+  font-size: .8em;
+  margin-left: 4px;
+  text-align: center;
+}
+.yt-label input {
+  display: block;
+  margin: 0 auto;
+}
+.artist-label::before {
+  content:"artist (required)";
+  display: block;
+  color: #888;
+  font-size: .8em;
+  text-align: left;
+  margin-left: 4px;
+}
+.title-label::before {
+  content:"title (required)";
+  display: block;
+  color: #888;
+  font-size: .8em;
+  text-align: left;
+  margin-left: 4px;
+}
+
+.genre-label::before {
+  content:"genre";
+  display: block;
+  color: #888;
+  font-size: .8em;
+  text-align: left;
+  margin-left: 4px;
+}
+.track-label::before {
+  content:"track #";
+  display: block;
+  color: #888;
+  font-size: .8em;
+  text-align: left;
+  margin-left: 4px;
+}
+.album-label::before {
+  content:"album";
+  display: block;
+  color: #888;
+  font-size: .8em;
+  text-align: left;
+  margin-left: 4px;
+}
+
+/* END LABELS */
+
+#menu-bar {
+  text-align: left;
+  padding: 5px 2%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#menu-bar > * {
+  padding-right: 10px;
+}
+
+#playlist {
+  padding-top: 20px;
+}
+
+#plex-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+#plex-link:hover {
+  opacity: .8;
+}
+
+#plex-link img {
+  width: 50px;
+  height: 50px;
+}
+
+#reset-button {
+  font-family: "Roboto";
+  font-size: .8em;
+  color: #888;
+  vertical-align: text-bottom;
+  cursor: pointer;
+}
+
+#reset-button:hover {
+  color: #2dcc18;
+}
+
+#single-additional {
+  padding-top: 0px;
+}
+
+.switcheroo {
+  background: url("../assets/arrows.png") top center no-repeat;
+  background-size: contain;
+
+  height: 1em;
+  width: 1em;
+
+  cursor: pointer;
+
+  float: right;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.switcheroo:hover {
+  background: url("../assets/arrowsgreen.png") top center no-repeat;
+  background-size: contain;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+    background:
+  linear-gradient(45deg, transparent 50%, black 50%),
+  linear-gradient(135deg, black 50%, transparent 50%),
+  linear-gradient(to right, white, white);
+background-position:
+  calc(100% - 21px) calc(1em + 2px),
+  calc(100% - 16px) calc(1em + 2px),
+  100% 0;
+background-size:
+  5px 5px,
+  5px 5px,
+  2.5em 2.5em;
+background-repeat: no-repeat;
+
+  border-radius: 4px;
+  border: 1px solid grey;
+  padding: 8px !important;
+
+  font-family: "Roboto";
+  font-size: 1em;
+  color: grey;
+
+  text-align: left;
+}
+
+.url {
+  margin: 0;
+}
+
 .wrapper::before {
   content: "";
   position: fixed;
@@ -326,23 +365,4 @@
   display: block;
   opacity: 1;
 }
-
-.checkmark {
-  stroke: green;
-  stroke-dashoffset: 0;
-  stroke-dasharray: 745.74853515625;
-  animation: dash 10s ease-out forwards;
-  z-index: 9999;
-}
-
-@keyframes dash {
-  0% {
-    stroke-dashoffset: 745.74853515625;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-
 

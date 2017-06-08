@@ -13,22 +13,24 @@
 
 </head>
 
-<div class="container">
+<div class="container-fluid">
+  <a id="plex-link" target="_blank" href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].':32400/web/' ?>" title="plex"><img src="assets/plex.png" alt="plex logo"></a>
   <header class="col-md-12">
     <img style="" width="100" src="assets/aardlogo.png" alt="really cool header">
   </header><!-- /header -->
-  <div id="menu-bar" class="col-md-4 col-md-offset-4">
-    <!-- version 2
-    <span id="casette"></span>
-    <span id="cd"></span> -->
-    <span id="album-button">ALBUM</span>
-    <span id="reset-button">RESET</span>
-  </div>
-  <div id="fake-form">
+  <div id="fake-form" class="col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-4">
 
     <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <input type="text" class="url" name="url" placeholder="url goes here"/>
+        <div id="menu-bar">
+      <!-- version 2
+      <span id="casette"></span>
+      <span id="cd"></span> -->
+      <span id="album-button">ALBUM</span>
+      <span id="reset-button">RESET</span>
+      <span class="switcheroo"></span>
+    </div>
+      <div style="position:relative;">
+        <input style="position:relative;width:70%;" type="text" class="url" name="url" placeholder="url goes here"/>
         <select class="library" name="library">
           <option value="music">music</option>
           <option value="podcast">podcast</option>
@@ -36,15 +38,16 @@
         </select>
       </div>
 
-      <div class="col-md-4 col-md-offset-4" id="playlist">
+      <div id="playlist">
 
       </div>
 
-      <div class="col-md-4 col-md-offset-4" id="single">
+      <div  id="single">
+
         <label class="yt-original"></label>
-        <label class="artist-label"><span class="switcheroo"></span><input type="text" name="artist" class="artist" value="" placeholder=""></label>
+        <label class="artist-label"><input type="text" name="artist" class="artist" value="" placeholder=""></label>
         <br>
-        <label class="title-label"><span class="switcheroo"></span><input type="text" name="title" class="title" value="" placeholder=""></label>
+        <label class="title-label"><input type="text" name="title" class="title" value="" placeholder=""></label>
         
         <div class="additional-container">
           <label class="track-label"><input type="text" name="tracknum" class="tracknum" value="" placeholder=""></label>
@@ -55,7 +58,7 @@
           <br>
           <input type="submit" value="Let's Do It">
         </div>
-        
+
       </div>
     </div>
 

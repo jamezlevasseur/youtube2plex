@@ -243,8 +243,9 @@ $(function () {
           data: {'library': $('.library').val(), 'url': $('.url').val(), 'title': $('.title').val(), 'artist': $('.artist').val(), 'album': $('.album').val(), 'tracknum': $('.tracknum').val(), 'genre': $('.genre').val()},
           success: function (data) {
             console.log(data);
-            if (data.indexOf('FAIL')!=-1) {
+            if (data.indexOf('FAIL')!=-1 || true) {
               stopLoading();
+              uploadFailure();
               console.warn('BAD UPLOAD');
               return;
             }
@@ -270,6 +271,14 @@ $(function () {
   function stopLoading () {
     $('#loading-gif').remove();
     amDoingSomething = false;
+  }
+
+  function uploadFailure () {
+    $('body').append('<div class="wrapper"><div id="failed-upload" style="color:red; font-size:60px; text-align: center; position:fixed; top:30%;left:0;right:0;bottom:0;">CANNOT UPLOAD</div></div>');
+    setTimeout( function () {
+      $('#failed-upload').remove();
+      $('#reset-button').click();
+    }, 3000);
   }
 
   function uploadSuccess () {
